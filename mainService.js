@@ -20,7 +20,12 @@ angular.module('userProfiles').service('mainService', function() {
         "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/olegpogodaev/128.jpg"
     }
   ];
-  function getUsers(){
-    
-  }
+
+  this.getUsers = function(){
+    return data;
+  };
+
+  this.toggleFavorite = function(userIndex){
+      data[userIndex].isFavorite = !data[userIndex].isFavorite;
+  };
 });
